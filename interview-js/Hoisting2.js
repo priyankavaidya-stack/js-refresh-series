@@ -32,11 +32,11 @@
 // arrow functions are not hoisted
 
 // Q 3:
-{
-    const func = () => console.log(letVar);
-    func();
-    let letVar = 3;
-}
+// {
+//     const func = () => console.log(letVar);
+//     func();
+//     let letVar = 3;
+// }
 
 // Output
 //  Cannot access 'letVar' before initialization
