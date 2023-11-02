@@ -32,7 +32,8 @@
 //         sampleUndefined: undefined
 //     };
 //     const testObj2 = JSON.parse(JSON.stringify(testObj));
-
+//     // solution to use spread operator
+//     // const testObj2  = {...testObj}
 //     console.log(testObj);
 //     console.log(testObj2);
 // }
@@ -49,16 +50,71 @@
 
 
 // Q 3:
-function test(){
-    const testObj = {
-        sample: console.log,
-        sampleUndefined: undefined,
+// function test(){
+//     const testObj = {
+//         sampleFunction: console.log,
+//         sampleInfinity: -Infinity,
+//         sampleNaN: NaN,
+//     };
+//     const testObj2 = JSON.parse(JSON.stringify(testObj));
 
-    };
-    const testObj2 = JSON.parse(JSON.stringify(testObj));
+//     console.log(testObj);
+//     console.log(testObj2);
+// }
+// test();
 
-    console.log(testObj);
-    console.log(testObj2);
-}
-test();
+// output
+// {
+//     sampleFunction: [Function: log],
+//     sampleInfinity: -Infinity,
+//     sampleNaN: NaN
+// }
+// { sampleInfinity: null, sampleNaN: null }
+
+
+// Q 4:
+// function test(){
+//     const testObj = {
+//         sampleFunction: "user",
+//         sampleInfinity: -Infinity,
+//         sampleNaN: NaN,
+//     };
+
+//     // const testObj2 = JSON.parse(JSON.stringify(testObj));
+//     // solution
+//     // shallow to deep convert
+//     // const testObj2 = {...testObj};
+//     // testObj2.sampleFunction = "priyanka"
+
+//     console.log(testObj);
+//     console.log(testObj2);
+// }
+// test();
+
+// output
+// { sampleFunction: 'user', sampleInfinity: -Infinity, sampleNaN: NaN }
+// { sampleFunction: 'user', sampleInfinity: null, sampleNaN: null }
+
+// after conversion solution is:
+// { sampleFunction: 'user', sampleInfinity: -Infinity, sampleNaN: NaN }
+// {
+//   sampleFunction: 'priyanka',
+//   sampleInfinity: -Infinity,
+//   sampleNaN: NaN
+// }
+
+
+// We can use lodash library also 
+
+
+// Q 5:
+// Why array, objects are shallow Copied and primitive datatypes likes
+// Number, String, Boolean are Deep Copied
+
+// Answer:---->
+
+
+// Check javascript doesnt have its own memory as it runs on browsers
+
+
 
