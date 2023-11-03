@@ -94,6 +94,9 @@
 
 // output
 // undefined
+// WHY
+// Since the function is a regular function (not an arrow function), the value of this inside the function would refer to the global object
+// (which is window in a browser or global in Node.js) in non-strict mode and would be undefined in strict mode.
 
 
 // Que:
@@ -142,6 +145,18 @@
 // myArray.forEach(()=>{  })
 // myArray.forEach(function(){ })
 // myArray.forEach(()=>())
+
+
+
+// ************* Difference between Regular and arrow function **************
+// The main differences between regular functions and arrow functions in JavaScript are as follows:
+// 1. Syntax: Arrow functions have a more concise syntax compared to regular functions. They do not have their own bindings to this, super, arguments, or new.target, which can make them more predictable.
+// 2. this binding: In regular functions, the value of this is dynamically scoped, whereas in arrow functions, the value of this is lexically (or statically) scoped. This means that arrow functions do not have their own this context; instead, they inherit the this value from the surrounding code.
+// 3. Arguments object: Arrow functions do not have their own arguments object. Instead, they inherit the arguments object from the parent scope.
+// 4. Constructability: Regular functions are constructible and can be used as constructors to create new objects, whereas arrow functions are not intended to be used as constructors and do not have their own prototype property.
+
+// Regular functions are more versatile and can be used in a wider range of scenarios, including as methods on objects, constructors for creating new objects, and standalone functions. Arrow functions are more concise and useful for short, simple functions and for maintaining the lexical scope of this.
+// It's important to choose the appropriate type of function depending on the context and requirements of the code.
 
 
 
