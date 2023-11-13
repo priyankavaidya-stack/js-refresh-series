@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+
+    console.log(parent.children);
+    // gives htmlCollection of all childrens
+
+    console.log(parent.children[1].innerHTML);
+
+    for (let i = 0; index < parent.children.length; index++) {
+        console.log(parent.children[i].innerHTML);
+    }
+    parent.children[1].style.color = "orange"
+
+    console.log(parent.firstElementChild);
+    // <div class="day">Monday</div>
+    console.log(parent.lastElementChild);
+    // <div class="day">Thursday</div>
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne);
+    // <div class="day">Monday</div>
+
+    console.log(dayOne.parentElement);
+    // <div class="parent">
+    //     <div class="day">Monday</div>
+    //     <div class="day">Tuesday</div>
+    //     <div class="day">Wednesday</div>
+    //     <div class="day">Thursday</div>
+    // </div>
+
+    console.log(dayOne.nextElementSibling);
+    // <div class="day">Tuesday</div>
+
+    console.log("NODES: ", parent.childNodes); 
+    // it gives you 9 nodes
+    // br tag is also one node 
+    // one node for parent br
+    // 8 nodes for creating div and br tag as text
+
+</script>
+</html>

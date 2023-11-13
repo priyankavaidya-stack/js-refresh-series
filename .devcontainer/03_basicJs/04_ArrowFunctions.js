@@ -158,7 +158,7 @@
 // Regular functions are more versatile and can be used in a wider range of scenarios, including as methods on objects, constructors for creating new objects, and standalone functions. Arrow functions are more concise and useful for short, simple functions and for maintaining the lexical scope of this.
 // It's important to choose the appropriate type of function depending on the context and requirements of the code.
 
-
+ 
 
 
 
