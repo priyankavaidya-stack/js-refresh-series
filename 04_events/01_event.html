@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Events in Javascript</h2>
+    <ul id="images">
+        <li id="owl"><img 
+            src="https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=400" 
+            width="200px">
+        </li>
+        <li><img 
+            src="https://images.pexels.com/photos/8241135/pexels-photo-8241135.jpeg?auto=compress&cs=tinysrgb&w=400" 
+            width="200px">
+        </li>
+        <li><img 
+            src="https://images.pexels.com/photos/17636489/pexels-photo-17636489/free-photo-of-man-in-hat-and-with-backpack-standing-with-hills-behind.jpeg?auto=compress&cs=tinysrgb&w=400" 
+            width="200px">
+        </li>
+        <li><img 
+            src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=400" 
+            width="200px">
+        </li>
+    </ul>
+    <!-- In javascript events run sequencially except some concepts with asychronous functions -->
+
+</body>
+<script>
+    // Type 1
+        // document.getElementById('owl').onclick = function(){
+        //     alert("Owl clicked")
+        // }
+
+    // Type 2
+        // document.getElementById("owl").addEventListener("click", function(){
+        //     alert("owl clicked again")
+        // },false)
+
+        // false 3rd parameter not really in need
+
+    // Type 3
+        // attachEvent()
+        // JQuery - on event
+       
+    // document.getElementById("owl").addEventListener("click", function(e){
+    //     console.log(e);
+    // },false)
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // Event propagation
+    // 1.Event bubbling and 2. Event capturing
+
+    // when clicking the owl id , it is  first calling id event then outside images event
+    // look it in console , you will get it
+    // document.getElementById("images").addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // })
+
+    // document.getElementById("owl").addEventListener('click', function(e){
+    //     console.log("clicked owl");
+    // })
+
+    // givin true values, means first ul tag images event will execute then inside id event will execute
+    // look it in console , you will get it i.e 
+
+    // document.getElementById("images").addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // },true)
+
+    // document.getElementById("owl").addEventListener('click', function(e){
+    //     console.log("clicked owl");
+    // },true)
+
+    // after clciking owl 1st image output will be 
+    // clicked inside the ul
+    // clicked owl
+
+    // even we are passing false and we want to stop it from bubbling, we can stop with propagation()
+        // document.getElementById('images').addEventListener("click",function(e){
+        //     console.log("clicked images ul");
+        // },false)
+
+        // document.getElementById('owl').addEventListener("click",function(e){
+        //     console.log("clicked owl");
+        //     e.stopPropagation();
+        // },false)
+
+    // output
+    // when clicking owl id, only owl will get clicked not images id ul
+    // clicked owl
+
+// ********* remove images when click on it **********
+// document.getElementById('images').addEventListener('click',function(e){
+//     const removeIt = e.target.parentNode;
+//     removeIt.remove();
+// })
+
+// but this will remove all li tags when clicking on li tags as parent node will be ul tag
+// so for that solution is
+document.getElementById('images').addEventListener('click',function(e){
+    if(e.target.tagName === "IMG"){
+        const removeIt = e.target.parentNode;
+        removeIt.remove();
+    }
+})
+
+</script>
+</html>

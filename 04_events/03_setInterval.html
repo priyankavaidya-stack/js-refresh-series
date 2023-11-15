@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval function</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    // project to change generate random background color
+    // when stop cliked, setInterval will be stopped
+    // when start clicked, background color will change again
+    
+    function randomColor(){
+        const hex = "0123456789ABCDEFG"
+        let color = "#";
+        for(let i = 0; i < 6; i++){
+            color += hex[Math.floor(Math.random() * 16)];
+        } 
+        return color;
+    };
+   
+   let intervalId;
+    const startName = function(){
+        if(!intervalId){
+            intervalId =  setInterval(name, 2000);
+        }
+
+        function name(){
+            document.body.style.backgroundColor = randomColor();
+        }
+    }
+
+    const stopName = function(){
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+    document.querySelector('#start').addEventListener('click', startName)
+    document.querySelector('#stop').addEventListener('click', stopName)
+</script>
+</html>
