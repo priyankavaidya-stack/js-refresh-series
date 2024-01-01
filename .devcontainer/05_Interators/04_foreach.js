@@ -78,11 +78,11 @@ const myCoding = [
 // })
 
 // we can use forEach to modify array elements
-myCoding.forEach((item, index)=>{
-    // if(index === 0)
-    // item.langName = "swift";
-    console.log(item);
-})
+// myCoding.forEach((item, index)=>{
+//     // if(index === 0)
+//     // item.langName = "swift";
+//     // console.log(item);
+// })
 
 // output
 // { langName: 'Javascript', shortcut: 'js' }

@@ -42,12 +42,17 @@
 // remembers the order of keys inserted
 
  
-const map = new Map();
+// const map = new Map();
 
-map.set('id', "1")
-map.set('name', "India")
-map.set('code', "+91")
+// map.set('id', "1")
+// map.set('name', "India")
+// map.set('code', "+91")
 
+// console.log(map);
+
+// const map = new Map();
+// map.set("id",1);
+// map.set("name","Priyanka")
 // console.log(map);
 
 // for (const [key, value] of map) {
